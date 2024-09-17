@@ -1,0 +1,10 @@
+#dependencies
+/node_modules
+
+#fichiers générer par vscode
+/.vscode
+
+#fichiers générer par webstorm
+/.idea
+
+.env

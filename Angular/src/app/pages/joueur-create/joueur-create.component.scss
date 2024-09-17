@@ -1,0 +1,9 @@
+:host {
+    .input-group {
+        margin-bottom: 10px;
+        width: 200px;
+        >input {
+            width: 100%;
+        }
+    }
+}

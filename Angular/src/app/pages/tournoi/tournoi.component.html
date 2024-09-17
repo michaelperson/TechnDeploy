@@ -1,0 +1,27 @@
+<p-table [value]="tournois">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Nom</th>
+            <th>Lieu</th>
+            <th>Date</th>
+            <th>Joueurs</th> <!-- 6/12 -->
+            <th>Status</th>
+            <th>Genre</th>
+            <th>Actions</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-t>
+        <tr>
+            <td>{{ t.nom }}</td>
+            <td>{{ t.lieu }}</td>
+            <td>{{ t.dateDeDebut | date : 'dd/MM/yyyy' }}</td>
+            <td><span [ngClass]="{ 'txt-error': t.nbJoueurs < t.minJoueurs }">{{ t.nbJoueurs }}</span>/{{ t.maxJoueurs }}</td>
+            <td>{{ t.status }}</td>
+            <td>{{ t.genre }}</td>
+            <td>
+                <p-button *ngIf="canRegister(t)" (onClick)="register(t)">S'inscrire</p-button>
+                <p-button *ngIf="canStart(t)" (onClick)="start(t)">Démarrer</p-button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

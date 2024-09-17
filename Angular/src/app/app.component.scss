@@ -1,0 +1,56 @@
+:host { // cibler le composant dans le quel on est
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
+    >header {
+        height: 70px;
+        border-bottom: 1px solid black;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .header-icon {
+            font-size: 24px;
+            cursor: pointer;
+        }
+    }
+
+    >div {
+        display: flex;
+        flex-grow: 1;
+        >nav {
+            width: 300px;
+            border-right: 1px solid black;
+            >ul {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                >li {
+                    border-bottom: 1px solid black;
+                    &:hover { background-color: orange; }
+                    &.active { background-color: darkorange; }
+                    >a {
+                        height: 50px;
+                        padding-left: 20px;
+                        display: flex;
+                        align-items: center;
+                        text-decoration: none;
+                        color: black;
+                        font-weight: bold;
+                    }
+                }
+            } 
+        }
+        >main {
+            padding: 20px;
+            flex-grow: 1;
+        }
+    }
+
+    >footer {
+        height: 50px;
+        border-top: 1px solid black;
+    }
+
+}

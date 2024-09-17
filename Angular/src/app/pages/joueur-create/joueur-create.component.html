@@ -1,0 +1,27 @@
+<form [formGroup]="form" (ngSubmit)="save()">
+    <div class="input-group">
+        <input formControlName="nom" placeholder="Nom" type="text" pInputText required>
+        <app-form-error [control]="form.get('nom')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input formControlName="prenom" placeholder="Prenom" type="text" pInputText required>
+        <app-form-error [control]="form.get('prenom')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input formControlName="email" placeholder="Email" type="email" pInputText required>
+        <app-form-error [control]="form.get('email')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input formControlName="dateDeNaissance" placeholder="Date de naissance" type="date" pInputText required>
+        <app-form-error [control]="form.get('dateDeNaissance')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input formControlName="password" placeholder="Mot de passe" type="password" pInputText required>
+        <app-form-error [control]="form.get('password')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <p-dropdown formControlName="genre" placeholder="Genre" [options]="['X', 'M', 'F']"></p-dropdown>
+        <app-form-error [control]="form.get('genre')"></app-form-error>
+    </div> 
+    <p-button type="submit">Sauver</p-button>
+</form>

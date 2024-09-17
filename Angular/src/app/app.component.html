@@ -1,0 +1,25 @@
+<header>
+  <span *ngIf="!connectedUser" routerLink="/login" class="header-icon pi pi-sign-in"></span>
+  <span *ngIf="connectedUser" (click)="logout()" class="header-icon pi pi-power-off"></span>
+</header>
+
+<div>
+  <nav>
+    <ul>
+      <li routerLinkActive="active"><a routerLink="/tournoi">Tournois</a></li>
+      <li *ngIf="connectedUser?.role === 'ADMIN'" routerLinkActive="active"><a routerLink="/tournoi-create">Ajouter un tournoi</a></li>
+      <li *ngIf="!connectedUser" routerLinkActive="active"><a routerLink="/joueur-create">Créer un compte</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <router-outlet></router-outlet>
+    <!-- emplacement des pages -->
+  </main>
+</div>
+
+<footer>
+
+</footer>
+
+<p-toast position="top-right"></p-toast>

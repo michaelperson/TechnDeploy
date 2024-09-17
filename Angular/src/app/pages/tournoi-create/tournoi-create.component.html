@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="input-group">
+        <input pInputText placeholder="Nom" formControlName="nom" required>
+        <app-form-error [control]="form.get('nom')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText placeholder="Lieu" formControlName="lieu">
+        <app-form-error [control]="form.get('lieu')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText type="date" placeholder="Date de début" formControlName="dateDeDebut" required>
+        <app-form-error [control]="form.get('dateDeDebut')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText type="number" placeholder="Nombre min de joueurs" formControlName="minJoueurs" required>
+        <app-form-error [control]="form.get('minJoueurs')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText type="number" placeholder="Nombre max de joueurs" formControlName="maxJoueurs">
+        <app-form-error [control]="form.get('maxJoueurs')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText type="number" placeholder="Age requis" formControlName="ageRequis">
+        <app-form-error [control]="form.get('ageRequis')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <p-dropdown [options]="['X', 'M', 'F']" 
+                    placeholder="Genre" 
+                    formControlName="genre" 
+                    [required]="true"
+                    [style]="{width:'100%'}"
+                    ></p-dropdown>
+    </div>
+
+    <div class="button">
+        <p-button type="submit" styleClass="p-button-info">Sauvegarder</p-button>
+    </div>
+</form>

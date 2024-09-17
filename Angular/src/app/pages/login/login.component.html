@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="login()">
+    <div class="input-group">
+        <input pInputText formControlName="email" type="email" placeholder="Email" required>
+        <app-form-error [control]="form.get('email')"></app-form-error>
+    </div>
+    <div class="input-group">
+        <input pInputText formControlName="password" type="password" placeholder="Mot de passe" required>
+        <app-form-error [control]="form.get('password')"></app-form-error>
+    </div>
+    <p-button type="submit">Se connecter</p-button>
+</form>

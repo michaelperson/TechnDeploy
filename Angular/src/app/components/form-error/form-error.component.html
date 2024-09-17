@@ -1,0 +1,9 @@
+<div class="txt-error" *ngIf="(control?.touched || control?.dirty) && control?.errors !== null">
+    <div *ngIf="control?.getError('required')">Ce champs est requis</div>
+    <div *ngIf="control?.getError('minlength')">Ce champs est trop court (min: {{ control?.getError('minlength').requiredLength }})</div>
+    <div *ngIf="control?.getError('maxlength')">Ce champs est trop long (max: {{ control?.getError('maxlength').requiredLength }})</div>
+    <div *ngIf="control?.getError('min')">Ce valeur est trop petite</div>
+    <div *ngIf="control?.getError('max')">Ce valeur est trop grande</div>
+    <div *ngIf="control?.getError('largerThan')">Cette valeur doit être plus grande que {{ control?.getError('largerThan').otherFieldName }}</div>
+    <div *ngIf="control?.getError('existsEmail')">Cet email existe déjà</div>
+</div>
