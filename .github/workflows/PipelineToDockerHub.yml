@@ -25,7 +25,7 @@ jobs:
         id: build-push-api
         uses: docker/build-push-action@v3
         with:
-          context: .
+          context: ./Back/.
           file: Dockerfile
           push: true
           tags: dockermikeperson251/technobeldeploy:latest
