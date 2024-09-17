@@ -1,10 +1,15 @@
-USE [Tournoi]
-GO
-DROP LOGIN IF EXISTS [ExpressUser]
-GO
-/****** Object:  User [ExpressUser]    Script Date: 26-05-23 14:24:20 ******/
-DROP USER IF EXISTS [ExpressUser]
-GO
+if(EXISTS(SELECT * FRom sys.databases WHERE name='Tournoi'))
+BEGIN
+	USE [Tournoi]
+	 
+	if(Exists(select * from sys.syslogins where name='ExpressUser'))
+	BEGIN
+		DROP LOGIN  [ExpressUser]
+	END 
+	/****** Object:  User [ExpressUser]    Script Date: 26-05-23 14:24:20 ******/
+	DROP USER IF EXISTS [ExpressUser]
+ 
+END
 USE [master]
 GO
 CREATE LOGIN [ExpressUser] WITH PASSWORD=N'Test1234=', DEFAULT_DATABASE=[master], CHECK_EXPIRATION=OFF, CHECK_POLICY=OFF
