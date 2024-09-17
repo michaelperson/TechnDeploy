@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: ./Back/Dockerfile
+          file: ./Front/Dockerfile
           push: true
           tags: dockermikeperson251/technobeldeploy:latest
